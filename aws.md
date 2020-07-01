@@ -40,6 +40,35 @@
 	- Create New
 		- [Eng57.Patrick.C]
 		- Generates SSH key in Downloads,
-		- `mv Eng57.Patrick.C.pem ~/.ssh`
+		- `$ mv Eng57.Patrick.C.pem ~/.ssh`
 	- Choose Class key
 12) Launch!
+
+## Machine Set Up
+
+1) Sending in bash script:
+	- `environment/app/provision.sh`
+	- Permissions! `-rwxr-xr-x` <-- What we want
+	- Convert to unix:
+		- `$ dos2unix provision.sh`
+	- `$ scp -i ~/.ssh/Eng57PatrickC.pem provision.sh ubuntu@34.254.175.94:/home/ubuntu`
+		- [secure copy in] [key] [file] [id@ip:path]
+2) Getting in:
+	- `$ ssh -i  ~/.ssh/Eng57PatrickC.pen ubuntu@34.254.175.94`
+		- [ssh in] [key] [id@ip]
+3) Running provision
+	- `~$ ./provision.sh`
+4) Sending in `app/`
+	- `spc -i ~/.ssh/Eng57PatrickC.pen -r app/ ubuntu@34.254.175.94:/home/ubuntu/app`
+	- Takes a while
+
+- scp
+- rsync
+
+## Start App
+
+1) ssh in
+2) `$ cd ~/app[2]`
+   `npm install`
+   `npm start`
+3) Navigate to app
