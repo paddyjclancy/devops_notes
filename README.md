@@ -19,3 +19,7 @@
   - Machine set up
   - Start app
  
+- reverse_proxy
+  - What is it?
+  - Advantages
+  - Manual set-up (VM)
