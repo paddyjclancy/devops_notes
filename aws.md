@@ -59,7 +59,7 @@
 3) Running provision
 	- `~$ ./provision.sh`
 4) Sending in `app/`
-	- `spc -i ~/.ssh/Eng57PatrickC.pen -r app/ ubuntu@34.254.175.94:/home/ubuntu/app`
+	- `scp -i ~/.ssh/Eng57PatrickC.pem -r app/ ubuntu@34.254.175.94:/home/ubuntu/app`
 	- Takes a while
 
 - scp
@@ -69,8 +69,11 @@
 
 1) ssh in, FROM `~/.ssh`
 	- `$ ssh -i Eng57PatrickC.pem ubuntu@3.249.15.206`
-2) `$ cd ~/app[2]`
+2) `$ cd ~/app`
+   EITHER
    `npm install`
    `npm start`
+   OR
+   `pm2 start app.js`  <--- preferable
 3) Navigate to app
 	- (AWS) IPv4 Public IPIP:3000

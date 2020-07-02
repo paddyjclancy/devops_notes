@@ -83,3 +83,11 @@ https://www.hostinger.co.uk/tutorials/how-to-set-up-nginx-reverse-proxy/
 7) `$ pm2 start app.js`
 8) Test development.local:3000
 9) Test development.local/
+
+
+## Automation - AWS EC2
+
+Assuming VM automation functions correctly:
+
+1) In default.conf, change ip to that of EC2 machine:
+	- IPv4 Public IP
