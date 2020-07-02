@@ -13,4 +13,9 @@
   - Ruby
   - Bundler
   - Mongodb
+
+-aws
+  - Instance Creation
+  - Machine set up
+  - Start app
  
