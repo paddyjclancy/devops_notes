@@ -67,8 +67,10 @@
 
 ## Start App
 
-1) ssh in
+1) ssh in, FROM `~/.ssh`
+	- `$ ssh -i Eng57PatrickC.pem ubuntu@3.249.15.206`
 2) `$ cd ~/app[2]`
    `npm install`
    `npm start`
 3) Navigate to app
+	- (AWS) IPv4 Public IPIP:3000
