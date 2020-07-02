@@ -14,7 +14,7 @@
   - Bundler
   - Mongodb
 
--aws
+- aws
   - Instance Creation
   - Machine set up
   - Start app
