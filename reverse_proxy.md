@@ -32,7 +32,7 @@ https://www.hostinger.co.uk/tutorials/how-to-set-up-nginx-reverse-proxy/
 	- `$ server {`
     		`listen 80;`
     		`location / {`
-        		`proxy_pass http://192.x.x.x:3000;`
+        		`proxy_pass http://127.0.0.1:3000;`
     	    `}`
 		  `}`
     - Ctrl-O, Ctrl-X

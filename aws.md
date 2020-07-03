@@ -51,15 +51,15 @@
 	- Permissions! `-rwxr-xr-x` <-- What we want
 	- Convert to unix:
 		- `$ dos2unix provision.sh`
-	- `$ scp -i ~/.ssh/Eng57PatrickC.pem provision.sh ubuntu@34.254.175.94:/home/ubuntu`
+	- `$ scp -i ~/.ssh/Eng57PatrickC.pem provision.sh ubuntu@[IPv4 Public IP]:/home/ubuntu`
 		- [secure copy in] [key] [file] [id@ip:path]
 2) Getting in:
-	- `$ ssh -i  ~/.ssh/Eng57PatrickC.pen ubuntu@34.254.175.94`
+	- `$ ssh -i  ~/.ssh/Eng57PatrickC.pen ubuntu@[IPv4 Public IP]`
 		- [ssh in] [key] [id@ip]
 3) Running provision
 	- `~$ ./provision.sh`
 4) Sending in `app/`
-	- `scp -i ~/.ssh/Eng57PatrickC.pem -r app/ ubuntu@34.254.175.94:/home/ubuntu/app`
+	- `scp -i ~/.ssh/Eng57PatrickC.pem -r app/ ubuntu@[IPv4 Public IP]:/home/ubuntu/app`
 	- Takes a while
 
 - scp
@@ -68,7 +68,7 @@
 ## Start App
 
 1) ssh in, FROM `~/.ssh`
-	- `$ ssh -i Eng57PatrickC.pem ubuntu@3.249.15.206`
+	- `$ ssh -i Eng57PatrickC.pem ubuntu@[IPv4 Public IP]`
 2) `$ cd ~/app`
    EITHER
    `npm install`
