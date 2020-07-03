@@ -66,7 +66,7 @@ https://www.hostinger.co.uk/tutorials/how-to-set-up-nginx-reverse-proxy/
 `server {`
     `listen 80;`
     `location / {`
-            `proxy_pass http://192.168.10.100:3000;`
+            `proxy_pass http://127.0.0.1:3000;`
     `}`
 `}`
 
@@ -78,16 +78,8 @@ https://www.hostinger.co.uk/tutorials/how-to-set-up-nginx-reverse-proxy/
 `sudo cp /home/ubuntu/environment/default.conf /etc/nginx/sites-available/default`
 
 4) `$ vagrant up`
-5) `$ vagrant ssh app`
+5) `$ vagrant ssh app` / `ssh -i Eng57PatrickC.pem ubuntu@[IPv4 Public IP]`
 6) `$ cd /home/ubuntu/app`
 7) `$ pm2 start app.js`
 8) Test development.local:3000
 9) Test development.local/
-
-
-## Automation - AWS EC2
-
-Assuming VM automation functions correctly:
-
-1) In default.conf, change ip to that of EC2 machine:
-	- IPv4 Public IP
