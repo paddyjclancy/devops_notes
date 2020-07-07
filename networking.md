@@ -156,10 +156,21 @@ Eg
 
 - Defensive border around a network node (eg laptop)
 - Monitors & controls traffic depending on set rules
+- Network Firewall
+	- Filter traffic between two or more networks
+	- Run on network hardware
+- Host-based Firewall
+	- Run on host, control traffic for these machines
 - Prevent attacks eg DoS / DDoS
 
 
 ## Dos / DDos Attacks
 
 - (Distributed) Denial of Service
--
+- Resource targetted by waves of requests in attempt to overload system and prevent legitimate requests being fulfilled
+- DoS = 1 source, many handlers / bots
+- DDoS = Many sources, many handlers / bots
+- Bots = Compromised, remote computers
+- Many bots = botnet
+	- Managed by attacker via control server
+
