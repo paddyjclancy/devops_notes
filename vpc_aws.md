@@ -1,5 +1,9 @@
 # VPC - AWS
 
+- Virtual Private Cloud
+- Concept allowing devs to create their own bubble networks within AWS
+- SEE VPC DIAGRAM
+
 ## Set-up
 
 1) AWS > VPCs > Create VPC
