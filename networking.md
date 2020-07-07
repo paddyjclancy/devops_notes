@@ -84,6 +84,7 @@
 - Replaced by CIDR
 - A, B, C = Unicast
 
+
 A) 1-126.x.x.x
 B) 128.x.x.x - 191.255.x.x
 C) 192.x.x.x - 223.255.255.x
@@ -93,19 +94,61 @@ E) 240.x.x.x - 255.x.x.254
 	- Reserved for experimental purposes
 
 
-## CDIR - Classless Inter-Domain Routing
+- Network number bit field:
+	- A: 8
+	- B: 16
+	- C: 24
+- Remaining bit field:
+	- A: 24
+	- B: 16
+	- C: 8
+- Number of networks:
+	- A: 128
+	- B: 16,384
+	- C: 2,097,152
+- Potential hosts per network:
+	- A: 16,777,214
+	- B: 65,534
+	- C: 254
+
+- Limited flexibility, lead to CIDR
+
+## CIDR - Classless Inter-Domain Routing
 
 - Classless Inter-Domain Routing
 - 1993-
 - Replaced classful network
+- Don't need to conform to class-based notation, more flexibility
 - Implemented to slow rate of IPv4 exhaustion
 - CIDR blocks are groups of addresses that share the same prefix and contain the same number of bits.
+- Notation = ip/n(network-bit-field)
 
-## Subnet / Submask
 
-- Subdivision of IP network
+Eg
+- 192.168.1.1/24
+	- Essentially 255.255.255.0
+	- (11111111.11111111.11111111.00000000)
+	- 192.168.1.0 - 192.168.1.255
+	- 254 hosts per subnet
+- 10.1.0.1/16
+	- Essentially 255.255.0.0
+	- (11111111.11111111.00000000.00000000)
+	- 10.1.0.0 - 10.1.255.255
+	- 65,534 hosts per subnet
+- 10.1.0.1/26
+	- Essentially 255.255.255.192
+	- (11111111.11111111.11111111.11000000)
+	- 10.1.0.0 - 10.1.0.63
+	- 62 hosts per subnet
+
+
+## Subnet mask
+
+- Subnet = Subdivision of IP network
+- Subnet mask = Number defining host range within network
 - Monolith --> n-tier
 - Families have an identical most significant bit group
+	- 1s must match, 0s not so much
 - A subnet mask is used to divide an IP address into two parts. 
 	- One part identifies the host (computer), the other part identifies the network to which it belongs
 
