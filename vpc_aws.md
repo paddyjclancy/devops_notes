@@ -54,7 +54,12 @@
 
 - Run npm instead of pm2 - more output for troubleshooting
 
-## Bastion Server Set-up
+## Bastion Server / Set-up
+
+- One way in, one way out - very high security
+- Abstracts high-security servers (MongoDB)
+- Located in public subnet, exposed
+- Holds single function
 
 1) Switch off MongoDB server first from inside DB
 	- `sudo systemctl stop mongod`
