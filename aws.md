@@ -54,7 +54,7 @@
 	- `$ scp -i ~/.ssh/Eng57PatrickC.pem provision.sh ubuntu@[IPv4 Public IP]:/home/ubuntu`
 		- [secure copy in] [key] [file] [id@ip:path]
 2) Getting in:
-	- `$ ssh -i  ~/.ssh/Eng57PatrickC.pen ubuntu@[IPv4 Public IP]`
+	- `$ ssh -i  ~/.ssh/Eng57PatrickC.pem ubuntu@[IPv4 Public IP]`
 		- [ssh in] [key] [id@ip]
 3) Running provision
 	- `~$ ./provision.sh`
@@ -76,4 +76,4 @@
    OR
    `pm2 start app.js`  <--- preferable
 3) Navigate to app
-	- (AWS) IPv4 Public IPIP:3000
+	- (AWS) IPv4 Public IP:3000
