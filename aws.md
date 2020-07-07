@@ -70,10 +70,6 @@
 1) ssh in, FROM `~/.ssh`
 	- `$ ssh -i Eng57PatrickC.pem ubuntu@[IPv4 Public IP]`
 2) `$ cd ~/app`
-   EITHER
-   `npm install`
-   `npm start`
-   OR
-   `pm2 start app.js`  <--- preferable
-3) Navigate to app
-	- (AWS) IPv4 Public IP:3000
+3) `forever start app.js`  <--- preferable
+4) Navigate to app
+	- (AWS) IPv4 Public IP
