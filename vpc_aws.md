@@ -57,8 +57,18 @@
 			- Rule 110 - HTTPS - ALL
 			- Rule 120 - SSH - MY IP
 			- Rule 130 - Custom (ephemeral) - 1024-65535
+				- Covers 27017 ie mongodb
 		- Associate to Public subnet
-	- Rule 130 covers 27017 ie mongodb
+	- Private
+		- Add Inbound:
+			- Rule 100 - Custom - 27017 - Public subnet
+			- Rule 110 - Custom (ephemeral) - 1024-65535 - All IPs
+			- Rule 120 - SSH - Public subnet
+		- Add Outbound:
+			- Rule 100 - Custom (ephemeral) - 1024-65535 - All IPs
+			- Rule 110 - HTTP - 80 - ALL
+			- Rule 120 - SSH - 22 - Public subnet
+
 
 ###### SEE VPC DIAGRAM
 
@@ -111,13 +121,23 @@
 9) Go to domain/posts
 
 
+## Security Groups
+
+- Operate on instance level
+- Support allow rules only
+
 ## NACL - Network Access Control List
 
-- Broader than SGs
+- Optional layer of security acting as a firewall, surrounding subnet
+- Acts on subnet level
+	- Broader than SGs, which work on instance level
+	- Automatically applied to all instances of subnet
 - Stateless
+	- ie return traffic must be explicitly allowed in rules
 - Need to specify both rules in and out
+- Supports allow and deny
 - Rules are ordered
-- Ephemeral ports
+- Include ephemeral ports
 	- Short lived transport protocol port
 	- aka Dynamic Ports
 		- Used on a per request basis
@@ -125,7 +145,7 @@
 	- Server reaches out to internet (on port 80)
 	- Returning data
 	- Ports 1024 - 65535
-	- Needs to pass through NACL,
+	- Needs to pass through NACL
 
 ## Deleting VPC
 
