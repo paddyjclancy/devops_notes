@@ -21,12 +21,29 @@
 	- Default = Main
 	- Rename, shape as req
 	- Does not connect to internet, only VPC
-	- Public, Private
+	- Public
+		- Connect to IGW
+		- Associate to public subnet
+	- Private
+		- Associate to private subnet
+		- CONNECT TO IGW FOR SET UP ONLY
 6) Security groups
 	- Specific ports for specific groups
 	- Different groups for each subnet
 	- PRIVATE - DB
+		- Inbound
+			- Custom TCP - 27017 - SG Public
+			- SSH - 22 - MY IP
+				- Will be changed to Bastion Private IP
+		- Outbound
+			- All traffic
 	- PUBLIC - WebApp
+		- Inbound
+			- SSH - 22 - MY IP
+			- HTTP - 80 - 0.0.0.0
+			- HTTPS - 443 0.0.0.0, ::/0
+		- Outbound
+			- All traffic
 7) NACL
 	- Defaults ALL TRAFFIC for inbound outbound.
 	- Add new inbound:
@@ -72,10 +89,10 @@
 		- Inbound: SSH - My IP
 		- Outbound: All Traffic 0.0.0.0
 4) Append private (DB) security group
-	-  Inbound: Bastion SG AND IP
+	-  Inbound: Bastion Private IP
 5) scp key into Bastion
 	- In new /.ssh folder
-6) ssh into DB, through bastion
+6) ssh into DB (using private IP), through bastion (using IPv4)
 7) Start up mongodb server
 	- `sudo systemctl start mongod`
 	- `systemctl status mongod` <-- Check
