@@ -6,9 +6,16 @@
   - Start App
 
 - devops_intro
-  - Role description
+  - Role Description
   - 4 Pillars
   
+- jenkins101
+  - Process Stages
+  - Pipeline Set-Up
+
+- jenkins_vpc
+  - Set Up
+
 - networking
   - IP addresses
     - IPv4
@@ -21,10 +28,10 @@
   - DoS & DDoS
 
 - reverse_proxy
-  - What is it?
+  - What Is It?
   - Advantages
-  - Manual set-up (VM)
-  - Automation set-up (VM)
+  - Manual Set-Up (VM)
+  - Automation Set-Up (VM)
 
 - tools_cmds
   - Bash --> Git
