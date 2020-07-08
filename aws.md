@@ -46,7 +46,7 @@
 
 ## Machine Set Up
 
-1) Sending in bash script:
+1) Sending in bash script (at ~):
 	- `environment/app/provision.sh`
 	- Permissions! `-rwxr-xr-x` <-- What we want
 	- Convert to unix:
@@ -59,8 +59,10 @@
 3) Running provision
 	- `~$ ./provision.sh`
 4) Sending in `app/`
-	- `scp -i ~/.ssh/Eng57PatrickC.pem -r app/ ubuntu@[IPv4 Public IP]:/home/ubuntu/app`
+	- `scp -i ~/.ssh/Eng57PatrickC.pem -r app/ ubuntu@[IPv4 Public IP]:/home/ubuntu`
 	- Takes a while
+	- Send in default.conf (~)
+
 
 - scp
 - rsync
@@ -70,6 +72,7 @@
 1) ssh in, FROM `~/.ssh`
 	- `$ ssh -i Eng57PatrickC.pem ubuntu@[IPv4 Public IP]`
 2) `$ cd ~/app`
+3) `sudo npm install forever -g`
 3) `forever start app.js`  <--- preferable
 4) Navigate to app
 	- (AWS) IPv4 Public IP
