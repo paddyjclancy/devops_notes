@@ -36,16 +36,22 @@ How to add a repo to a pipeline, in a Jenkins Server
 	- `Kind` - SSH username with private key
 	- `id`, `desc` - an internal, unique name
 	- `Private key` - enter directly
+		- jenkins / idrsa
 	- `ADD`
-8) Add new key (other) to GitHub, if not there
-9) `Branches to build` - /dev/
-10) `Additional Behaviours` - Merge before build
-		   	    - To master
+8) Add new key (public) to GitHub, if not there
+9) GitHub Webhooks
+	- `Payload URL` = http://[Public IP Jenkins server]/github-webhook/
+	- `Content type` = application/json
+	- Send me everything
+9) `Branches to build` - `*/dev`
+10) `Additional Behaviours`
+	- Merge before build
+	- To master
 11) `Build Triggers` - GitHub Hook
-12) `Execute shell`
-		`cd app
-		npm install
-		npm test`
+12) `Execute shell`, eg:
+		- `cd app`
+		- `npm install`
+		- `npm test`
 13) `Post Build Actions`
 	- Git Publisher
 		- Push only if succeed
