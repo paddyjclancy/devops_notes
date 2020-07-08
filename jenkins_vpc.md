@@ -34,7 +34,7 @@ See aws.md / vpc_aws.md for further clarity on their set up
 	- NodeJS
 	- Office 365
 9) Create desired pipeline - SEE JENKINS101
-10) Append J-SG and J-NACL inbound rules:
+10) Append J-SG and Public NACL inbound rules:
 	- GitHub IPs (sourced:https://api.github.com/meta):		
 		1) 192.30.252.0/22
     	2) 185.199.108.0/22
