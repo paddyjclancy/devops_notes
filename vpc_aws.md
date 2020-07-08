@@ -18,13 +18,13 @@
 	- Attatch to VPC
 5) Route table
 	- Pre-defined exists - shell
-	- Default = Main
+	- Default = Main == Private
 	- Rename, shape as req
 	- Does not connect to internet, only VPC
 	- Public
 		- Connect to IGW
 		- Associate to public subnet
-	- Private
+	- Private = Default
 		- Associate to private subnet
 		- CONNECT TO IGW FOR SET UP ONLY
 6) Security groups
@@ -46,8 +46,19 @@
 			- All traffic
 7) NACL
 	- Defaults ALL TRAFFIC for inbound outbound.
-	- Add new inbound:
-		- Rule 110 - SSH - MY IP
+	- Public:
+		- Add Inbound:
+			- Rule 100 - HTTP - ALL
+			- Rule 110 - HTTPS - ALL
+			- Rule 120 - SSH - MY IP
+			- Rule 130 - Custom (ephemeral) - 1024-65535
+		- Add Outbound:
+			- Rule 100 - HTTP - ALL
+			- Rule 110 - HTTPS - ALL
+			- Rule 120 - SSH - MY IP
+			- Rule 130 - Custom (ephemeral) - 1024-65535
+		- Associate to Public subnet
+	- Rule 130 covers 27017 ie mongodb
 
 ###### SEE VPC DIAGRAM
 
@@ -98,3 +109,24 @@
 	- `systemctl status mongod` <-- Check
 8) Go to domain
 9) Go to domain/posts
+
+
+## NACL - Network Access Control List
+
+- Broader than SGs
+- Stateless
+- Need to specify both rules in and out
+- Rules are ordered
+- Ephemeral ports
+	- Short lived transport protocol port
+	- aka Dynamic Ports
+		- Used on a per request basis
+	- First line provision.sh = update
+	- Server reaches out to internet (on port 80)
+	- Returning data
+	- Ports 1024 - 65535
+	- Needs to pass through NACL,
+
+## Deleting VPC
+
+- Stop & terminate instances first
