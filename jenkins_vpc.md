@@ -8,6 +8,9 @@
 
 ## Set up
 
+See aws.md / vpc_aws.md for further clarity on their set up
+
+
 1) AWS - Create Jenkins Security Group
 	- Inbound Rules:
 		- SSH (22) - My IP
