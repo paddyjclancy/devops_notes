@@ -40,4 +40,5 @@ See aws.md / vpc_aws.md for further clarity on their set up
     	2) 185.199.108.0/22
     	3) 140.82.112.0/20
     - Allow these into ports 22 & 9418 (Default port for Git Protocol)
-11) Check webhook ping status (Github > Repo > Settings > Webhooks)
+11) Create webhook (see jenkins101)
+12) Check webhook ping status (Github > Repo > Settings > Webhooks)
