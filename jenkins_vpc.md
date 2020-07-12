@@ -1,6 +1,6 @@
 # VPC - Jenkins Server
 
-###### See Jenkins VPC Diagram!!
+###### See Jenkins VPC Diagram!! (and / or video ;-;)
 
 - Jenkins server within public subnet.
 - We want to push a commit into GitHub, which will trigger the Jenkins build test.
