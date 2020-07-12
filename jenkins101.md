@@ -1,6 +1,22 @@
 # Jenkins - Integration Server
 
-- Combines all code / aspects of an app, to continuously test it.
+## What is Jenkins?
+
+- Open source automation server facilitating CI and CDel
+- Automates building, testing, deploying
+	- Continuous Integration: 
+		- The practice of merging devs' working environments to shared mainline multiple times regularly (day, week)
+		- Integrations can then be verified by automated builds and tests
+		- Smaller, more regular changes; easier to detect / pinpoint errors
+	- Continuous Delivery:
+		- The practice of keeping source code deployable at any point.
+		- Beyond ensuring application passes tests, it must also have configuration necessary to push it into production.
+		- Does not go further than ensuring readiness (ie no deployment)
+	- (continuous deployment:)
+		- Will use automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment.
+
+
+- Jenkins combines all code / aspects of an app, continuously tests it, and returns status report.
 
 ## Build steps:
 

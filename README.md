@@ -1,5 +1,12 @@
 # DevOps Notes
 
+- ansible
+  - Infrastructure as Code
+  - Configuration Management Tools
+  - Orchestration Tools
+  - Ansible
+    - Installation
+
 - aws
   - Instance Creation
   - Machine Set Up
@@ -13,6 +20,7 @@
     - Horizontal
   
 - jenkins101
+  - What is Jenkins?
   - Process Stages
   - Pipeline Set-Up
 
