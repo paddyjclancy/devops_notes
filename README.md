@@ -8,6 +8,9 @@
 - devops_intro
   - Role Description
   - 4 Pillars
+  - Scaling
+    - Vertical
+    - Horizontal
   
 - jenkins101
   - Process Stages
