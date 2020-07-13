@@ -21,6 +21,11 @@
 	- Ansible
 	- Terraform
 
+## Kernel
+
+- Layer between OS and hardware
+- Manages operations eg memory / CPU time
+
 ## Ansible
 
 - A higher level language, for IAC
@@ -86,4 +91,21 @@
 	192.168.10.30 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
 ```
 - `$ansible all -m ping`
-- `$ssh-copy-id vagrant@[ansible_machine_ip]`????
+
+##### Inside Agent Machines [Each Line]
+
+- `$cd etc/ssh`
+- `$sudo nano sshd_config`
+	- Make `PermitRootLogin yes`
+	- Make `PasswordAuthentication yes`
+- `$sudo service ssh restart`
+- `$sudo passwd root`
+	- Enter new password: "Vagrant"
+
+##### Back Inside Ansible Machine
+
+- `$ssh-keygen`
+- `$cd /home/vagrant/.ssh`
+- `$ssh-copy-id root@[Agent IP]`
+	- Enter password
+- Attempt login with `ssh 'root@[Agent IP]'`
