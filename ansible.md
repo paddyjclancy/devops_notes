@@ -89,7 +89,7 @@
 - `$ansible all -m ping`
 - `$ssh-keygen`
 
-##### Inside Agent Machines [Each Line]
+##### Inside Agent Machines [Each One]
 
 - `$cd etc/ssh`
 - `$sudo nano sshd_config`
