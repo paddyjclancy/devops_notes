@@ -57,23 +57,19 @@
 ```
 ---
 
-- host: [APP]
-  remote_user: [SUDO]
+- hosts: web
+  gather_facts: yes
   become: true
   task:
-  - name: ensure nginx is at the latest version
-    apt:
-      name: nginx
-      state: latest
-  - name: start nginx
-    service: 
-      name: nginx
-      state: started
-    become: yes
-  - name: copy in app folder
-    copy:
-      src: ./app/
-      dest: /home/ubuntu/app-from-playbook/
+  - name: Install nginx
+    apt: pkg=nginx state=present
+    notify:
+    - restart nginx
+    - name: Enable nginx during boot
+      service: name=nginx  state=started enabled=yes
+  handlers:
+          - name: restart nginx
+            service: name=nginx state=restarted
 ```
 
 4) vagrant up
@@ -91,6 +87,7 @@
 	192.168.10.30 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
 ```
 - `$ansible all -m ping`
+- `$ssh-keygen`
 
 ##### Inside Agent Machines [Each Line]
 
@@ -104,7 +101,7 @@
 
 ##### Back Inside Ansible Machine
 
-- `$ssh-keygen`
+
 - `$cd /home/vagrant/.ssh`
 - `$ssh-copy-id root@[Agent IP]`
 	- Enter password
