@@ -5,7 +5,7 @@
 - Open source automation server facilitating CI and CDel
 - Automates building, testing, deploying
 	- Continuous Integration: 
-		- The practice of merging devs' working environments to shared mainline multiple times regularly (day, week)
+		- The practice of merging devs' working environments to shared mainline, multiple times regularly (day, week)
 		- Integrations can then be verified by automated builds and tests
 		- Smaller, more regular changes; easier to detect / pinpoint errors
 	- Continuous Delivery:
