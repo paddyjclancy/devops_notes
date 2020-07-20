@@ -38,7 +38,31 @@
 - Allows for multi and hybrid cloud-premesis-environment management (orchestration)
 - Allows us to set up and track several machines such as webserver, db, AWS
 
-## Playbooks - Handlers
+## Playbooks
+
+- File(s) that provision and configure agent machines.
+- Use YAML language
+	- ie Mark Up
+	- ie abstracted, human-readable
+	- Higher level so therefore more flexible, robust, easier to use with various machines
+- Must begin with `---`
+- Standard format:
+
+` 
+---
+hosts:
+gather_facts:
+become:
+tasks:
+...
+handlers:
+`
+- `hosts:` declares specific agent(s)
+- `gather_facts:` tells ansbile machine to gather the info of its environment
+- `become:` used with 'true' to get root permission to perform commands, ie `sudo`
+- `tasks:` marks beginning of list of tasks to be set to machine
+
+###### Playbooks - Handlers
 
 - Tasks that will run when called using the `notify` call, within a separate task
 - Positioned after main tasks of playbook
