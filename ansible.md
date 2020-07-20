@@ -38,6 +38,11 @@
 - Allows for multi and hybrid cloud-premesis-environment management (orchestration)
 - Allows us to set up and track several machines such as webserver, db, AWS
 
+## Playbooks - Handlers
+
+- Tasks that will run when called using the `notify` call, within a separate task
+- Positioned after main tasks of playbook
+
 # Setting up Ansible with Vagrant (from level 0)
 
 1) Vagrant init
