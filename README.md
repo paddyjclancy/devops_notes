@@ -7,6 +7,9 @@
   - Ansible
     - Installation
 
+- ansible_aws
+  - Setting up Ansible WebApp in AWS
+
 - aws
   - Instance Creation
   - Machine Set Up
@@ -18,6 +21,7 @@
   - Scaling
     - Vertical
     - Horizontal
+  - Monitoring
   
 - jenkins101
   - What is Jenkins?
@@ -43,6 +47,12 @@
   - Advantages
   - Manual Set-Up (VM)
   - Automation Set-Up (VM)
+
+- terraform.md
+  - Intro
+  - Steps
+  - Terminology
+  - Commands
 
 - tools_cmds
   - Bash --> Git
