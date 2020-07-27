@@ -9,6 +9,8 @@
 
 - ansible_aws
   - Setting up Ansible WebApp in AWS
+  - Learning notes
+  - Errors encountered
 
 - aws
   - Instance Creation
