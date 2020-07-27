@@ -21,6 +21,13 @@ Problem 2:
 
 #### 4 Pillars of DevOps
 
+- DevOps promotes communication and collaboration between business, development and operations --> unification
+- Involves people and processes, not just tools
+- Works very well with the Agile Methodology - flexibility, iteration
+- DevOps is about automating the development, release and operation processes
+- DevOps helps in the speed of application delivery to users
+- Continous improvement, learn through feedback
+
 1) Ease of use
   - Infrastructure needs to be easy to use for entire team
 
@@ -71,3 +78,15 @@ Problem 2:
 - Cons:
   - Can be slower - Network Calls / Remote Procedure Call (RPCs)
   - Potential for data inconsistency due to load balancing across machines
+
+
+#### Monitoring
+
+- Example tools: AWS monitoring, ELK Stack
+- Course does not cover a lot of this
+- This practice provides a greater awareness of an app / product:
+  - Health status
+  - Robustness
+  - Information of code
+  - Estimate demand - plan and respond
+  - Monitor security and activity
