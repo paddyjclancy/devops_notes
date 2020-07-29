@@ -59,6 +59,7 @@
   - Steps
   - Terminology
   - Commands
+  - Modules / Separation of Concerns
 
 - tools_cmds
   - Bash --> Git
