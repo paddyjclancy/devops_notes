@@ -17,6 +17,10 @@
   - Machine Set Up
   - Start App
 
+- containers
+  - Virtual Machines
+  - Containers
+
 - devops_intro
   - Role Description
   - 4 Pillars
