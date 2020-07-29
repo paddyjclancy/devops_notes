@@ -66,5 +66,4 @@
 4. When using software try to make use of encryption files and plugins
 5. Do not push any files with passwords or credentials to github
 6. GitHub repo's can be set to private if need be!
-
-
+7. Use of Bastion servers inside VPCs
