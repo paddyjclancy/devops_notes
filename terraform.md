@@ -33,7 +33,7 @@
 
 - Terraform will work with a cloud provider
 - You will need programatic access and API keys
-- Set these in environment variables (Start > Control Panel), using correct naming convention
+- Set these in environment variables (Start > Search `environment variables`), using correct naming convention
 	- Can also be set within main.tf file itself (DO NOT UPLOAD TO GITHUB WITH THIS METHOD)
 
 ### Terminology
