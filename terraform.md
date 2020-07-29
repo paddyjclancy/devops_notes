@@ -50,3 +50,4 @@
 - `terraform plan`
 - `terraform apply`
 - `terraform destroy`
+	- Make sure to destroy once finished working!
