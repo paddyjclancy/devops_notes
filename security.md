@@ -1,69 +1,80 @@
-# Security regarding DevOps
+# Security Principles Regarding DevOps
 
-### Areas of Risk Potential
+### Key Areas of Risk
 
-1) Access Keys 
-2) Passwords
-3) Firewalls (AWS: Security Groups, NACLs)
-3) IP Addresses
+- SSH / Access Keys
+- Passwords / Secrets
+- Networking Permissions (Firewalls etc)
+- IP addresses
 
-- When using key files / passwords in projects, they must be kept in a secure / enclosed location
-	- Abstracted or hidden
-		- Generally `.ssh/` in machine directories
-		- Also use of `_password` method for variable definition / assignment in programs such as Python
-		- If possible, encryption techniques such as hashing are encouraged.
-			- Hashing ALSO improves memory management
-	- No one who is surplus to requirement of particular scope should have access to these
-	- They should NOT be in other machines / locations
-		- Github
-			- Github has built in notifications that will recognise potential security flaws
-			- Also proper use of `.gitignore` to prevent accidental upload of sensitive info
-		- EC2 instances 
-			- External access may be possible due to insecure VPC set-up
-	- Abstraction should be encouraged whenever possible
-		- Eg. Terraform
-			- Separation of Concerns / Interpolation of variables
-			- We have so far used this for private IPs and VPC / AMI ids
-			- Variable definition file is kept separate
-	- Config files (`sshd_conf`) should be monitored to ensure appropriate levels of security
-		- `PermitRootLogin`
-		- `Password Authentication`
-	- Use of `sudo passwd root` to set individual machine passwords, which are stored in `ansible/hosts` for reference
-		- Abstracted from user
-		- Used in tandem with SSH keys to provide two layers of access security
+These never want to be shared / moved to locations where they are not vital requirements, such as GitHub, or where access is insecure.
 
-- AWS - EC2 - VPCs
-	- When setting up components and respective rules, be very aware of exactly who is going to have access to what
-	- Access key pairs provided by company
-		- VERY SENSITIVE!
-		- Do not send around
-		- Can be kept in Ansible vault
-	- Security Groups and NACLs especially
-		- SG   = Instance level
-		- NACL = Subnet level
-			- In and Out rules
-			- Default to block all
-	- IGW connects VPC to internet and therefore outside world   <-- Be wary!
-	- Route tables connect IGW to subnets					     <-- Be wary!
-	- When using Jenkins server (or equivalent) for CI pipelines:
-		- Only allow access to VALID Github (or equivalent) IPs	
-			- Open meta data provided on their own platform
+Access key pairs (especially those provided by a company) are VERY sensitive.
+	- Do not send these around
+	- Do not keep them in an insecure location
+	- Use Ansible Vault service
+	- Set as Environment Variables
+	- Use `.gitignore`
 
-### Operations assigned with these areas of Risk
+Careful use of `.gitignore` and Ansible vaults (or equivalents) will assist as backup in maintaining a high level of internal security for these objects. as files.
 
-1. Creating machines with Ansible -> Use Ansible Vault
-2. Private SSH keys should be added to .gitignore
-3. Anything private such as passwords should be placed in .gitignore before pushing to GitHub
-4. Security Groups and NACL's should have port 22 open only to your IP.
-5. Dynamic IP variables should be kept in gitignore
-6. Any form of credentials should be encrypted or ignored (Important!)
+Abstraction and interpolation of variables and tokens - eg IP addresses in Terraform - are a good method of removing sensitive information from main files. IE SEPARATION OF CONCERNS
 
-### Best practices with areas of risk and tools
+GitHub will notify of any potential security flaws it notices, be aware of these
 
-1. Add any ssh private keys to .gitignore
-2. Where using Ansible use the encrypted and password locked Vault
-3. Keep an eye out for any GitGuardian notifications
-4. When using software try to make use of encryption files and plugins
-5. Do not push any files with passwords or credentials to github
-6. GitHub repo's can be set to private if need be!
-7. Use of Bastion servers inside VPCs
+Encryption is another encouragable technique for protecting data
+	- Eg hashing
+
+#### AWS - VPCs
+
+Good practices for network management:
+	- Use of Bastion servers
+	- Use strong firewalls, and allow only the minimum required access where possible
+		- SGs - Instance level
+		- NACLs - Subnet level
+		- IGW - Opens VPC to the world
+			- Be wary
+	- If using Jenkins or equivalent for CI integration, ensure VALID IPs have been granted access
+		- Can be found on company site meta data
+
+
+  world
+    |
+    |
+   \ /
+   VPC - Internet Gateway
+    |
+    |
+   \ /
+  Network table
+    |
+    |
+   \ /
+   NACLs
+    |
+    |
+   \ /
+  Subnets
+    |
+    |
+   \ /
+Security Groups  
+    |
+    |
+   \ /
+EC2 instance
+
+
+#### Useful links
+
+Ansible Vault:
+	- https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html
+
+Encryption:
+	- https://www.howtogeek.com/howto/33949/htg-explains-what-is-encryption-and-how-does-it-work/
+
+Environment Variables:
+	- https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa
+
+Network Strategy:
+	- https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-network-and-security.html
