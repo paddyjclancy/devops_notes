@@ -34,6 +34,9 @@
 
 - AWS - EC2 - VPCs
 	- When setting up components and respective rules, be very aware of exactly who is going to have access to what
+	- Access key pairs provided by company
+		- VERY SENSITIVE!
+		- Do not send around
 	- Security Groups and NACLs especially
 		- SG   = Instance level
 		- NACL = Subnet level
