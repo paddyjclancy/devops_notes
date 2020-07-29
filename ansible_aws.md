@@ -41,6 +41,7 @@ Node app should work in repo on VMs from auto provision
 14) SSH in from Ansible machine:
 	- `ssh -i ~/.ssh/my_aws ubuntu@[DNS]`
 
+- NB: Check new security group for HTTP / HTTPS access from local IP.
 
 ### B) Provision EC2 Instance
 
@@ -48,9 +49,16 @@ Node app should work in repo on VMs from auto provision
 15) sshd_config file
 	- `Root Permission yes`
 	- `Password Login yes`
-
-16) Copy app
-17) 
+16) `sudo passwd root` --> vagrant
+17) `sudo service sshd restart`
+18) Test ping with `ansible all -m ping`
+19) Sync app/ using play:
+	- `ansible-playbook [sync_file].yml --ask-vault-pass`
+17) Install nginx and set up reverse proxy using play:
+	- `ansible-playbook [nginx_file].yml --ask-vault-pass`
+18) Set-up and run app using play:
+	- `ansible-playbook [app_play_file].yml --ask-vault-pass`
+19) Go to IP address and test!
 
 
 
