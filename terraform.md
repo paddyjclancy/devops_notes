@@ -35,6 +35,7 @@
 - You will need programatic access and API keys
 - Set these in environment variables (Start > Search `environment variables`), using correct naming convention
 	- Can also be set within main.tf file itself (DO NOT UPLOAD TO GITHUB WITH THIS METHOD)
+		- See `security.md` for more info on key security
 
 ### Terminology
 
