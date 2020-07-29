@@ -51,3 +51,49 @@
 - `terraform apply`
 - `terraform destroy`
 	- Make sure to destroy once finished working!
+
+### Modules / Separation of Concerns
+
+In example repo - Terraform Code-along - the original `main.tf` file was split into sections:
+	- Central
+	- App (Public)
+	- DB (Private)
+
+Overall structure was as follows:
+
+- terraform_codealong
+	- modules
+		- app_tier
+			- main.tf
+			- outputs.tf
+			- variables.tf
+		- db_tier
+			- main.tf
+			- outputs.tf
+			- variables.tf
+	- scripts
+		- app
+			- init.sh.tpl
+	- main.tf
+	- variables.tf
+
+
+Each tier requires its own set of `main.tf` `outputs.tf` and `variables.tf`
+
+- Relevent VPC components will be created within `main.tf`
+- Individual `variables.tf` files will reference the variables used within `main.tf`
+	- Point out to either external `variables.tf`, `secret_vars.tf` or `outputs.tf` of other module(s)
+- Any variables that will be needed FROM a tier (in another tier) will be generated in the `outputs.tf` file
+- Finally, in the primary `main.tf` file, modules will need to be referenced, as well as variables that will be used within, see example below:
+
+`
+module "app_tier" {
+  source = "./modules/app_tier"
+  vpc_id = aws_vpc.mainvpc.id
+  name = var.name
+  my_ip = var.my_ip
+  internet_gateway_id = aws_internet_gateway.gw.id
+  db_private_ip = module.db_tier.db_private_ip
+  ami_app = var.ami_app
+}
+`
