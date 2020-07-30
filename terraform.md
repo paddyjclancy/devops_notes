@@ -84,8 +84,10 @@ Each tier requires its own set of `main.tf` `outputs.tf` and `variables.tf`
 - Individual `variables.tf` files will reference the variables used within `main.tf`
 	- Point out to either external `variables.tf`, `secret_vars.tf` or `outputs.tf` of other module(s)
 - Any variables that will be needed FROM a tier (in another tier) will be generated in the `outputs.tf` file
-- Finally, in the primary `main.tf` file, modules will need to be referenced, as well as variables that will be used within, see example below:
+- Finally, in the primary `main.tf` file, modules will need to be referenced, as well as variables that will be used within, see example below.
 
+
+### Examples
 
 Reference to secondary module within main `main.tf`:
 	`
