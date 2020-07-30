@@ -5,6 +5,7 @@
 - SSH / Access Keys
 - Passwords / Secrets
 - Networking Permissions (Firewalls etc)
+- SQL Injections
 - IP addresses
 
 These never want to be shared / moved to locations where they are not vital requirements, such as GitHub, or where access is insecure.
@@ -15,6 +16,8 @@ Access key pairs (especially those provided by a company) are VERY sensitive.
 	- Use Ansible Vault service
 	- Set as Environment Variables
 	- Use `.gitignore`
+
+SQL Injections can occur when a database has open access. Data can be potentially added which may thereby corrupt / compromise the database. Secure firewalls are a must
 
 Careful use of `.gitignore` and Ansible vaults (or equivalents) will assist as backup in maintaining a high level of internal security for these objects. as files.
 
