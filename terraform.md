@@ -54,7 +54,7 @@
 
 ### Modules / Separation of Concerns
 
-In example repo - Terraform Code-along - the original `main.tf` file was split into sections:
+In example repo - **Terraform Code-along** - the original `main.tf` file was split into sections:
 	- Central
 	- App (Public)
 	- DB (Private)
