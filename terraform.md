@@ -95,7 +95,7 @@ Reference to secondary module within main `main.tf`:
 	  source = "./modules/app_tier" 							# locator of app main file
 	  vpc_id = aws_vpc.mainvpc.id 								# reference to id of resource made in same file
 	  name = var.name 									# variable created in primary variable file
-	  my_ip = var.my_ip 								# variable created in primary variable file
+	  my_ip = var.my_ip 							 		# variable created in primary variable file
 	  internet_gateway_id = aws_internet_gateway.gw.id 				 	# reference to id of resource made in same file
 	  db_private_ip = module.db_tier.db_private_ip  					# variable created in output of db_tier
 	  ami_app = var.ami_app 								# variable created in primary variable file
