@@ -12,6 +12,8 @@
   - Learning notes
   - Errors encountered
 
+- auto_scaling 
+
 - aws
   - Instance Creation
   - Machine Set Up
@@ -29,6 +31,11 @@
     - Horizontal
   - Monitoring
   
+- DNS_route53_records
+  - Domain Name Service
+  - Records
+  - Route 53
+
 - jenkins101
   - What is Jenkins?
   - Process Stages
@@ -36,6 +43,12 @@
 
 - jenkins_vpc
   - Set Up
+
+- load_balancing
+  - Intro
+  - Balancer
+  - Listener
+  - Target Group
 
 - networking
   - IP addresses
@@ -53,6 +66,11 @@
   - Advantages
   - Manual Set-Up (VM)
   - Automation Set-Up (VM)
+
+- security
+  - Key areas of risk
+  - AWS
+  - Links
 
 - terraform.md
   - Intro
