@@ -88,6 +88,7 @@ Each tier requires its own set of `main.tf` `outputs.tf` and `variables.tf`
 
 
 ### Examples
+###### For full example, see https://github.com/paddyjclancy/terraform_codealong
 
 Reference to secondary module within main `main.tf`:
 ```
