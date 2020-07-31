@@ -51,32 +51,32 @@ resource "aws_lb" "lbtest" {
 - There must be at least one default rule
 - The rules that you define for a listener determine how the load balancer routes requests to its registered targets.
 - Condition types:
-		- `host-header`
-			- Route based on host name of request
-		- `http-header`
-			- Route based on HTTP header of request
-		- `http-request-method`
-			- Route based on HTTP request method
-		- `path-pattern`
-			- Route based on path pattern in request URL
-		- `query-string`
-			- Route based on key/value pairs, of value in query string
-		- `source-ip`
-			- Route based on source IP address of request
+	1) `host-header`
+		- Route based on host name of request
+	2) `http-header`
+		- Route based on HTTP header of request
+	3) `http-request-method`
+		- Route based on HTTP request method
+	4) `path-pattern`
+		- Route based on path pattern in request URL
+	5) `query-string`
+		- Route based on key/value pairs, of value in query string
+	6) `source-ip`
+		- Route based on source IP address of request
 
 - Action types:
-		- `authenticate-cognito`
-			- HTTPS
-			- Use Amazon Cognito to authenticate users
-		- `authenticate-oidc`
-			- HTTPS
-			- Use id provider that is compliant with OpenID Connect to authenticate users
-		- `fixed-response`
-			- Return custom HTTP response
-		- `forward`
-			- **Forward requests to specified target groups**
-		- `redirect`
-			- Redirect requests from one URL to another
+	1) `authenticate-cognito`
+		- HTTPS
+		- Use Amazon Cognito to authenticate users
+	2) `authenticate-oidc`
+		- HTTPS
+		- Use id provider that is compliant with OpenID Connect to authenticate users
+	3) `fixed-response`
+		- Return custom HTTP response
+	4) `forward`
+		- **Forward requests to specified target groups**
+	5) `redirect`
+		- Redirect requests from one URL to another
 
 Example Terraform notation:
 ```
