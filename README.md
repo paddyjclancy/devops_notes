@@ -36,6 +36,13 @@
   - Records
   - Route 53
 
+- elk_monitoring
+  - Intro
+  - Beats
+  - Elasticsearch
+  - Logstash
+  - Kibana
+
 - jenkins101
   - What is Jenkins?
   - Process Stages
