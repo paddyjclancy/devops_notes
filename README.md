@@ -36,6 +36,13 @@
   - Records
   - Route 53
 
+- elk_installation
+  - Intro
+  - Prerequisites
+  - Elasticsearch
+  - Logstash
+  - Kibana
+
 - elk_monitoring
   - Intro
   - Beats
