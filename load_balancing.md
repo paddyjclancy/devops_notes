@@ -113,3 +113,56 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
 ```
+
+### Creation using AWS (Manual)
+
+- Network Load Balancer
+- Name
+- VPC
+- Availability Zone
+- IPv4 - `Assigned by AWS`
+	- Not elastic
+- Listening - `Port 80`
+- Target Group
+	- Type - `Instance`
+	- Protocolocol - `TCP`
+	- Port - `80`
+	- Health checks (default)
+- Did not select any instances
+
+## Autoscaling on AWS - Launch Configurations (Manual)
+
+- Name
+- AMI
+- Instance type - `t2.micro`
+- Additional configuration
+	- Request Spot Instances -`None`
+	- IAM profile - Machine ID `No role`
+		- Provides level of access
+		- Least amount of permissions required
+	- No cloudwatch monitoring
+	- Advanced Details
+		- User data
+```
+		#!bin/bash
+
+		cd /home/ubuntu/web-app
+		pm2 start app.js
+```
+	- select security groups
+	- choose existing key pair
+	- IP address type - `Do not assign`
+
+- Moves on to steps creating EC2 instance
+
+Autoscaling launch template with your lanch configuration
+
+- Enable load balancing
+- Choose target group
+- ELB health checks
+- No monitoring
+- Group size: `2, 1, 10`
+- No scale in protection
+- No notifications
+- Give it a name tag
+- Create and Test
