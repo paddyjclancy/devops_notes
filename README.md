@@ -12,8 +12,6 @@
   - Learning notes
   - Errors encountered
 
-- auto_scaling 
-
 - aws
   - Instance Creation
   - Machine Set Up
