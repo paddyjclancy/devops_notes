@@ -30,6 +30,7 @@
     - Vertical
     - Horizontal
   - Monitoring
+  - Future of DevOps
   
 - DNS_route53_records
   - Domain Name Service
