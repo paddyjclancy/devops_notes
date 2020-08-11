@@ -18,8 +18,7 @@ Problem 2:
   - Faster updates
 
 
-
-#### 4 Pillars of DevOps
+## 4 Pillars of DevOps
 
 - DevOps promotes communication and collaboration between business, development and operations --> unification
 - Involves people and processes, not just tools
@@ -45,6 +44,8 @@ Problem 2:
   - Cost of slow innovation
   - Cost of time to market
   - Cost of infrastructure
+
+
 
 ## Business scaling
 
