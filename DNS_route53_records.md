@@ -9,6 +9,8 @@
 - **RECORDS:** Instructions that live in DNS servers and provide information about respective domains.
 	- Contain text files written in DNS syntax
 
+
+
 ## Types of Record (Common)
 
 - A: 
@@ -44,7 +46,11 @@
 - When a DNS server hits records for a site, it will trigger another lookup, returning the subsequent IP
 
 ### Aliases
-- Virtual record type created to provide CNAME-like behavious on domains
+
+- Virtual record type created to provide CNAME-like behavious on domains.
+- Works with Route 53
+- Similar to CNAME records but resolved on server side and appear to clients as an A record
+- They can be used to create transparent references to other AWS resources that only provide DNS names and not IP addresses, such as an Elastic Load Balancer or a CloudFront distribution.
 
 ### MX Records
 
@@ -63,8 +69,12 @@ Time-to-live
 - Time frame it takes for DNS changes to be updated accross internet.
 - A few hours - a few days
 
+
+
 ## Route 53
 
-- Amazon
+Amazon Route 53 effectively connects user requests to infrastructure running in AWS – such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets – and can also be used to route users to infrastructure outside of AWS. 
+
 - Highly scalable and available DNS service
 - Works with AWS
+- Port 53s
