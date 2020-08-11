@@ -23,7 +23,7 @@
   - Virtual Machines
   - Containers
 
-- devops_intro
+- devops
   - Role Description
   - 4 Pillars
   - Scaling
