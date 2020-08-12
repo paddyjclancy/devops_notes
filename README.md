@@ -35,6 +35,12 @@
   - Records
   - Route 53
 
+- docker
+  - Create, Update, Delete
+  - Repos and Pushing
+  - Using Ubuntu
+  - Persistance
+
 - elk_installation
   - Intro
   - Prerequisites
