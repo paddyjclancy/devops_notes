@@ -26,7 +26,7 @@
 	- Can be tailored to contain only the required services
 	- Requires less resources
 - Uses the same OS as host
-- Deployed using Docker or orchestrators such as Azure Kubernetes Service
+- Deployed using **Docker** or orchestrators such as Azure Kubernetes Service
 - Updates and upgrades done through updating build file (Dockerfile)
 - Use Azure Disks for local storage (single node)
 	- Azure Files (SMB shares) for multiple nodes / servers
