@@ -26,7 +26,7 @@ Problem 2:
 - Works very well with the Agile Methodology - flexibility, iteration
 - DevOps is about automating the development, release and operation processes
 - DevOps helps in the speed of application delivery to users
-- Continous improvement, learn through feedback
+- Continuous improvement, learn through feedback
 
 #### 1) Ease of use
   - Infrastructure needs to be easy to use for entire team
