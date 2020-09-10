@@ -8,9 +8,10 @@ Problem 1:
 - SOLUTION: Standardized environment <-- Virtual Machines, enter DevOps
 
 Problem 2:
-- Devlopers write code in large blocks
+- Developers write code in large blocks
   - Takes time, creates large / sudden update
   - Any errors will be much harder to find
+
 
 - SOLUTION: AGILE
   - Smaller, regular updates
@@ -27,18 +28,18 @@ Problem 2:
 - DevOps helps in the speed of application delivery to users
 - Continous improvement, learn through feedback
 
-1) Ease of use
+#### 1) Ease of use
   - Infrastructure needs to be easy to use for entire team
 
-2) Flexibility
+#### 2) Flexibility
   - Allows ability to evolve
 
-3) Robustness
+#### 3) Robustness
   - 100% uptime
   - Fast deployment
   - Strength / Reliability of Infrastructure
 
-4) Cost
+#### 4) Cost
   - Cap-ex & Op-ex
   - Cost of downtime
   - Cost of slow innovation
@@ -112,7 +113,7 @@ Technical teams that used these types of tools internally are likely to begin le
 
 When all of your users are working in the same physical office, it’s relatively easy to ensure that the hardware and software configurations on their devices do not vary too much. As a result, the number of environment variables you have to test for and address is limited.
 
-Remote working usually implies that employees are using personal devices, which they have configured themselves. 
+Remote working usually implies that employees are using personal devices, which they have configured themselves.
 
 This is likely to drive increased use of automated testing by DevOps teams who need an efficient way of ensuring that the business apps they deploy and manage will work as required
 
