@@ -1,18 +1,15 @@
-# DevOps?
+# DevOps Role
 
-Problem 1:
+Problem 1
 - Developers write code, in working / Dev environment
 - Code works for them, passed on to Operations
 - Ops cannot run app - different environments
-
 - SOLUTION: Standardized environment <-- Virtual Machines, enter DevOps
 
-Problem 2:
+Problem 2
 - Developers write code in large blocks
   - Takes time, creates large / sudden update
   - Any errors will be much harder to find
-
-
 - SOLUTION: AGILE
   - Smaller, regular updates
   - Reduces feedback loop, easier to find errors (automated testing)
