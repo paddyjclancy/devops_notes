@@ -1,11 +1,68 @@
 # Docker
 
 ###### Learning Docker - https://www.docker.com/101-tutorial
-###### PWD = Play With Docker, cloud hosted 
-###### Notes taken from PWD tutorial
+###### PWD = Play With Docker, cloud hosted
+###### Notes taken from PWD tutorial & Pluralsight course: Docker Deep Dive
 
 
-#### Create, Update, Delete
+### Architecture & Theory
+
+##### Kernel Internals
+A container uses two main building blocks - _namespaces_ and _control groups_.
+
+Namespaces are about **isolation**.
+- Similar to hypervisors (_Virtualbox_ etc)
+- Go from one OS to multiple virtual OS, ie containers
+- Containers share single kernel in host
+- Generally contains:
+	- Process ID _(pid)_
+		- Isolates containers from one another
+	- Network _(net)_
+		- Gives each container its own isolated network stack
+	- Filesystem / mount _(mnt)_
+		- Gives each container its own root file system (C: or /)
+	- Inter-process communications _(ipc)_
+		- Lets containers access shared memory
+	- UTS _(uts)_
+		- Provides hostnames
+	- User _(user)_
+		- Allows differing users within containers (eg root)
+
+
+Control groups (C groups) are about **setting limits**.
+- Allocated amount of resources per container (CPU, disk space, RAM etc)
+
+
+##### Docker Engine
+
+**For Linux:**
+
+1) _Client_ asks _daemon_ for new container via _REST API_
+
+2) _Daemon_ gets _containerd_ to start and manage containers
+
+3) _Runc_ (at **O**pen **C**ontainer **I**nitiative layer) builds containers
+- runc = Reference implementation of OCI runtime spec, default runtime of a vanilla installation of Docker
+
+
+**For Windows:**
+
+1) _Client_ asks _daemon_ for new container via _REST API_
+
+2) Instead of containerd and runc, windows uses compute services
+
+These low level differences do not alter user experience
+
+
+##### Windows Containers
+
+
+
+### Create, Update, Delete
+Docker is modular
+
+Container = Isolated area of an OS with resource usage limits applied
+
 A container is simply another process on your machine that has been isolated from all other processes on the host machine.
 
 That isolation leverages kernel namespaces and cgroups, features that have been in Linux for a long time. Docker has worked to make these capabilities approachable and easy to use.
@@ -22,19 +79,19 @@ RUN yarn install --production			# yarn is an alternative to npm
 CMD ["node", "/app/src/index.js"]		# Specifies default command to run when starting container from image
 ```
 
-- To build an image from the above Dockerfile, enter `$ docker build -t docker-101 .` 
+- To build an image from the above Dockerfile, enter `$ docker build -t docker-101 .`
 	- **Run this in the directory containing the Dockerfile**
 - To start a container and run an application, enter `$ docker run -d -p 3000:3000 docker-101`
 		- `-d` - run the container in detached mode (in the background)
 		- `-p 80:80` - map port 80 of the host to port 80 in the container
 
 - To see the ID of containers, enter `docker ps`
-- To enter into a container, and do something with it, use `docker exec [ID]` `cat /data.txt` 
+- To enter into a container, and do something with it, use `docker exec [ID]` `cat /data.txt`
 - To stop a container using its id, enter `docker stop [ID]`
 - Remove a halted container using `docker rm [ID]`
 
 
-#### Repos and Pushing
+### Repos and Pushing
 With a free account, Dockerhub allows you to make unlimited Public repos, and ONE private.
 
 - Create public repo, named 101-todo-app
@@ -45,16 +102,16 @@ Applying a tag within terminal:
 - Apply tag using `docker tag docker-101 YOUR-USER-NAME/[tag-name]`
 - Push container into repo using `docker push YOUR-USER-NAME/101-todo-app`
 
-#### Using Ubuntu
+### Using Ubuntu (or other OS)
 Containers can contain OS systems such as Linux Ubuntu. The following line of code creates an Ubuntu container, with a file `/data.txt`, containing a random number between 1 and 10,000:
 
 `docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"`
 
 
 #### Persistance
-Containers have so far effectively been 'Read Only'. Changes isolated to a removed container will be lost.	
+Containers have so far effectively been 'Read Only'. Changes isolated to a removed container will be lost.
 
-**Volumes** provide the ability to connect specific filesystem paths of the container back to the host machine. 
+**Volumes** provide the ability to connect specific filesystem paths of the container back to the host machine.
 
 Before your computer can use any kind of storage device (such as a hard drive, CD-ROM, or network share), you or your operating system must make it accessible through the computer's file system. This process is called **mounting**.
 
