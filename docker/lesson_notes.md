@@ -1,4 +1,10 @@
 # Notes to be organised & assorted
+## Images
+
+
+
+############################################################################
+
 A **Dockerfile** is simply a text-based script of instructions that is used to create a container image:
 
 ```
