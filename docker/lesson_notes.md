@@ -1,30 +1,7 @@
 # Notes to be organised & assorted
-## Images
-
 
 
 ############################################################################
-
-A **Dockerfile** is simply a text-based script of instructions that is used to create a container image:
-
-```
-FROM node:10-alpine						# This image is not stored locally, so will be fetched
-WORKDIR /app
-COPY . .
-RUN yarn install --production			# yarn is an alternative to npm
-CMD ["node", "/app/src/index.js"]		# Specifies default command to run when starting container from image
-```
-
-- To build an image from the above Dockerfile, enter `$ docker build -t docker-101 .`
-	- **Run this in the directory containing the Dockerfile**
-- To start a container and run an application, enter `$ docker run -d -p 3000:3000 docker-101`
-		- `-d` - run the container in detached mode (in the background)
-		- `-p 80:80` - map port 80 of the host to port 80 in the container
-
-- To see the ID of containers, enter `docker ps`
-- To enter into a container, and do something with it, use `docker exec [ID]` `cat /data.txt`
-- To stop a container using its id, enter `docker stop [ID]`
-- Remove a halted container using `docker rm [ID]`
 
 
 ### Repos and Pushing
