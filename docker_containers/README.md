@@ -1,5 +1,7 @@
 # Docker Terminal Commands
 
+
+## Containers
 - `$ docker container run` - spin up a fresh container
 - `$ docker container run -it <image> sh` - spins up new container and navigates terminal in (-it) for "interactive"
 - `$ docker container start <ID>` - starts a specific container
@@ -27,7 +29,14 @@
 
 - `$  journalctl -u docker.service` - to read daemon logs in Linux
 
-## Repos and Pushing
+
+## Images
+- `$ docker image pull <ID> (-a)` - pulls an image from registry to host
+- `$ docker image inspect <ID>` - to show config and layers of an image
+- `$ docker image rm <ID>` - deletes image
+
+
+## Docker Repos and Pushing
 With a free account, Dockerhub allows you to make unlimited Public repos, and ONE private.
 - `$ docker login -u <username>` - log in
 - `$ docker tag <ID> YOUR-USER-NAME/<tag-name>` - adds a custom tag
