@@ -31,3 +31,18 @@ For when starting image is too large / monolithic - breaks it down into multiple
 Multiple `FROM` sections within a single Dockerfile which mark different steps
 
 Final section tends to include multiple `COPY FROM` commands, which combine all previous outputted images into this one.
+
+### Working with Containers
+When using containers, the image stays the same and a new layer specific to the container is added.
+
+Stopping or pausing does not get rid of a container, it _must_ be deleted - this is __persistance__.
+
+The container does not include kernels - it shares that of its host machine.
+  - Windows host = Windows contaienr
+  - Linux = Linux
+
+Each container should generally contain just a single service, in keeping with the __Separation of Concerns__ practice.
+
+### Logging
+
+Logs found in either _systemd_ or _var/log/messages_ for Linux, using `journalctl -u docker.service`
