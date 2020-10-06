@@ -41,3 +41,21 @@ With a free account, Dockerhub allows you to make unlimited Public repos, and ON
 - `$ docker login -u <username>` - log in
 - `$ docker tag <ID> YOUR-USER-NAME/<tag-name>` - adds a custom tag
 - `$ docker push YOUR-USER-NAME/<repo-name>` - pushes container into repo
+- `$ docker node ls` - lists all docker nodes
+
+
+## Swarms
+- `$ docker swarm init` - creates swarm (requires at least one running instance) / exits single-engine mode
+- `$ docker swarm init --external-ca ...` creates swarm using an external Certificate Authority
+
+
+- `$ docker swarm join --token ...` - adds new node to the swarm. Specific command shown when using the following commands _in situ_:
+  - `$ docker swarm join-token manager` - will provide token for command to add new nodes to a swarm (manager role).
+  - `$ docker swarm join-token worker` - will provide token for command to add new nodes to a swarm (worker role).
+- `$ docker swarm join-token --rotate worker` - provides token for converting a manager to a worker.
+- `$ docker swarm join-token --rotate manager` - provides token for converting a worker to a manager.
+
+
+- `$ docker swarm init --autolock` - autolocks new swarm
+- `$ docker swarm update --autolock-true` - autolocks existing swarm
+- `$ docker swarm unlock` - unlocks swarm
