@@ -59,3 +59,12 @@ With a free account, Dockerhub allows you to make unlimited Public repos, and ON
 - `$ docker swarm init --autolock` - autolocks new swarm
 - `$ docker swarm update --autolock-true` - autolocks existing swarm
 - `$ docker swarm unlock` - unlocks swarm
+
+
+## Container Networking
+- `$ docker network ls` - lists all current networks
+- `$ docker network create` - creates network in single command (bridge default)
+  - `$ docker network create -d overlay <NAME>` - creates overlay network
+- `$ docker network create -o encrypted` - ditto, but encrypted data plane
+- `$ docker network inspect <NAME>` - to display details for specific networks
+- `$ docker port <NAME>` - displays all port mappings within container
