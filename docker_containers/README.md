@@ -63,8 +63,20 @@ With a free account, Dockerhub allows you to make unlimited Public repos, and ON
 
 ## Container Networking
 - `$ docker network ls` - lists all current networks
-- `$ docker network create` - creates network in single command (bridge default)
+- `$ docker network create <NAME>` - creates network in single command (bridge default)
   - `$ docker network create -d overlay <NAME>` - creates overlay network
 - `$ docker network create -o encrypted` - ditto, but encrypted data plane
 - `$ docker network inspect <NAME>` - to display details for specific networks
 - `$ docker port <NAME>` - displays all port mappings within container
+
+
+## Volumes
+- `$ docker volume create <NAME>` - creates a volume
+- `$ docker volume rm <NAME>` - delete volume
+- `$ docker volume ls` - lists all available volumes
+- `$ docker volume inspect <NAME>` - displays details for specific volume
+
+
+- `$ docker container run -d -it --name voltest \` _`--mount source=ubervol, target=/vol alpine:latest `_ - mounts a volume to container
+  - `source` = which volume
+  - `target` = where to mount within container
