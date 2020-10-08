@@ -5,6 +5,7 @@
 - `$ docker container run` - spin up a fresh container
 - `$ docker container run -it <image> sh` - spins up new container and navigates terminal in (-it) for "interactive"
 - `$ docker container start <ID>` - starts a specific container
+- `$ docker container exec ...` - to execute an internal container command from outside
 - `$ docker container stop <ID>` - stops a specific container
 - `$ docker rm <ID>` - remove a halted container
 - `$ docker build -t <name>` - builds container from Dockerfile and tags it with _name_ (-t / --tag)
@@ -80,3 +81,9 @@ With a free account, Dockerhub allows you to make unlimited Public repos, and ON
 - `$ docker container run -d -it --name voltest \` _`--mount source=ubervol, target=/vol alpine:latest `_ - mounts a volume to container
   - `source` = which volume
   - `target` = where to mount within container
+
+
+## Secrets
+- `$ docker secret create <NAME> <SOURCE>` - creates a secret using text contained within <SOURCE>
+`$ docker secret ls` - list all secrets
+`$ docker secret inspect <NAME>` - displays details only of specific secret (_NOT_ contents)

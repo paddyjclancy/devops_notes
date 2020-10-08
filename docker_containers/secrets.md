@@ -1,6 +1,4 @@
-# Notes to be organised & assorted
-
-## Secrets
+# Secrets
 These are sensitive data, anything that may be a security threat if possible.
 
 **Docker context:** A string of <= 500KB, requiring swarm-mode in order to leverage security protocols. It acts as a service.
