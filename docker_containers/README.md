@@ -108,3 +108,9 @@ With a free account, Dockerhub allows you to make unlimited Public repos, and ON
 - `$ docker secret ls` - list all secrets
 
 - `$ docker secret inspect <NAME>` - displays details only of specific secret (_NOT_ contents)
+
+
+## Stacks
+- `$ docker stack deploy -c stackfile.yml <NAME>` - deploys a full stack from the compose file, and assigns a name
+
+- `$ docker stack services <NAME>` - returns list of all services, and details, held within a stack
