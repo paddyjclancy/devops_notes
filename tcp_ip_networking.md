@@ -26,17 +26,17 @@ TCP is part of the *transport layer* of the TCP/IP suite, security layers (SSL) 
 Before a client attempts to connect with a server, the server must first bind to and listen at a port to open it up for connections: this is called a *passive open*.
 
 Connection established via **three-way handshake:**
-  1. **SYN:**
+  - **1- SYN:**
     - The active open is performed by the client sending a SYN to the server.
 
     - The client sets the segment's sequence number to a random value A.
 
-  2. **SYN-ACK:**
+  - **2- SYN-ACK:**
     - In response, the server replies with a SYN-ACK.
 
     - The acknowledgment number is set to one more than the received sequence number i.e. A+1, and the sequence number that the server chooses for the packet is another random number, B.
 
-  3. **ACK:**
+  - **3- ACK:**
     - Finally, the client sends an ACK back to the server.
 
     - The sequence number is set to the received acknowledgement value i.e. A+1, and the acknowledgement number is set to one more than the received sequence number i.e. B+1.
