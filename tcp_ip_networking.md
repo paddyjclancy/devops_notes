@@ -55,4 +55,4 @@ IP has the task of delivering packets from the source host to the destination ho
   - For this purpose, IP defines packet structures that encapsulate the data to be delivered.
   - It also defines addressing methods that are used to label the datagram with source and destination information.
 
-###### See [networking.md](devops_notes/networking) for further info on IP addressing
+###### See [networking.md](https://github.com/paddyjclancy/devops_notes/blob/master/networking.md) for further info on IP addressing
