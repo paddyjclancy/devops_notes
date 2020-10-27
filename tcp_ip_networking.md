@@ -40,3 +40,19 @@ Connection established via **three-way handshake:**
     - Finally, the client sends an ACK back to the server.
 
     - The sequence number is set to the received acknowledgement value i.e. A+1, and the acknowledgement number is set to one more than the received sequence number i.e. B+1.
+
+
+## IP
+
+###### IPv4 --2006--> IPv6
+
+Principal communications protocol in the Internet protocol suite for relaying datagrams across network boundaries. Its routing function enables internetworking, and essentially establishes the Internet.
+
+The Internet Protocol is responsible for addressing host interfaces, *encapsulating* data into datagrams and routing datagrams from a source host interface to a destination host interface across one or more IP networks.
+  - Each datagram has two components: a header and a payload. The IP header includes source IP address, destination IP address, and other metadata needed to route and deliver the datagram. The payload is the data that is transported. This method of nesting the data payload in a packet with a header is called encapsulation.
+
+IP has the task of delivering packets from the source host to the destination host solely based on the IP addresses in the packet headers.
+  - For this purpose, IP defines packet structures that encapsulate the data to be delivered.
+  - It also defines addressing methods that are used to label the datagram with source and destination information.
+
+###### See [networking.md](devops_notes/networking) for further info on IP addressing
