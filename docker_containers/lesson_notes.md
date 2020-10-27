@@ -1,5 +1,4 @@
-# Enterprise Tools
-
+##### Notes to be organised & assorted
 ### Big Picture
 **Docker Enterprise Engine (EE)** - Engine, Ops UI and Ops on-prem registry
 **Docker Community Engine (CE)** - Community edition of engine, contained API and Docker daemon
